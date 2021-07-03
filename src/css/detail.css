@@ -1,0 +1,253 @@
+.details {
+  min-height: calc(100vh - 70px);
+  color: white;
+  padding: 0 calc(3.5vw + 5px);
+  position: relative;
+}
+
+.title {
+  height: 30vh;
+  min-height: 170px;
+  min-width: 200px;
+  width: 45vh;
+}
+
+.title img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.background {
+  background-color: black;
+  position: fixed;
+  top: 4.4rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.reposn {
+  position: absolute;
+  top: 5vh;
+  left: 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.controls .play {
+  border-radius: 4px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgba(249, 249, 249, 0.5);
+  border: none;
+  padding: 0 22px;
+  margin-right: 22px;
+  letter-spacing: 1.8px;
+  transition: all 250ms;
+  color: white;
+  font-weight: 500;
+}
+
+.controls .play:hover {
+  background-color: rgba(198, 198, 198, 0.8);
+}
+
+.trailer {
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid white;
+  color: rgb(249, 249, 249);
+  padding: 0 22px;
+  margin-right: 22px;
+  letter-spacing: 1.8px;
+  transition: all 250ms;
+  transform-origin: left center;
+}
+
+.trailer:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.add,
+.grpWatch {
+  margin-right: 16px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+.grpWatch {
+  background-color: rgb(0, 0, 0);
+}
+
+.add:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.add span {
+  font-size: 26px;
+  color: white;
+  margin-bottom: 4px;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: rgb(249, 249, 249);
+  font-size: 15px;
+  min-height: 20px;
+  margin-top: 20px;
+}
+
+.descript {
+  border: 1px solid;
+  max-width: 35vw;
+  font-size: 1.5rem !important;
+  line-height: 1.4;
+  text-align: left !important;
+  margin-top: 18px;
+  color: rgb(249, 249, 249);
+}
+
+.glow-on-hover {
+  width: 150px;
+  height: 40px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  opacity: 0.9;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.glow-on-hover:hover {
+  color: #fff;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@media (max-width: 510px) {
+  .add,
+  .grpWatch {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .controls .play {
+    font-size: 12px;
+    height: 35px;
+    padding: 0 12px;
+    margin-right: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .trailer {
+    font-size: 12px;
+    height: 35px;
+    padding: 0 12px;
+    margin-right: 12px;
+    letter-spacing: 1.5px;
+  }
+}

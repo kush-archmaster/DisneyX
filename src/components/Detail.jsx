@@ -40,7 +40,7 @@ const Detail = () => {
             </div>
             
 
-            <div className='reposn'>
+     <div className='reposn'>
  
 
             <div className="title">
